@@ -1,0 +1,163 @@
+📚 ECE Study Assistant — Multi-Agent AI System
+Powered by Google AI API + Streamlit
+
+The ECE Study Assistant is an intelligent multi-agent learning tool built for Engineering students.
+It uses Google AI, Streamlit, PDF processing, and memory-based chat to create an interactive study environment.
+
+This assistant combines:
+✔ Explainer Agent
+✔ Quiz Agent
+✔ Summarizer Agent
+✔ Chat Mode (ChatGPT-like)
+✔ PDF-based Q&A
+✔ Persistent user history
+
+Perfect for:
+
+ECE / AI / CS students
+
+Exam preparation
+
+Concept learning
+
+PDF-based studying
+
+Daily tutoring
+
+🚀 Features
+🧠 Multi-Agent System
+
+Explainer Agent
+
+Explains engineering concepts
+
+Great for subjects like Embedded Systems, AI, Signals, Networks, etc.
+
+Quiz Agent
+
+Generates MCQs, short questions
+
+Helps test your understanding
+
+Summarizer Agent
+
+Summarizes large texts or answers
+
+Useful for long notes or PDFs
+
+💬 Smart Chat Mode
+
+Behaves like ChatGPT but with memory + PDF support:
+
+Answers using your uploaded PDFs
+
+Remembers previous chat interactions
+
+Learns your study context
+
+Google AI powered reasoning
+
+📄 PDF Upload + Processing
+
+Upload any PDF (notes, books, handouts)
+
+Automatically extracts text
+
+Chat & agents can answer questions from the PDF
+
+💾 Persistent Memory System
+
+Automatically saves:
+
+Chat messages
+
+PDF contents
+
+Previous context
+
+Stored in:
+
+data/user_data.json
+
+
+Even if the user refreshes browser → data stays.
+
+🎨 Modern Streamlit UI
+
+Side panel for selecting agents
+
+Chat-style messaging interface
+
+PDF upload panel
+
+“Clear Chat History” option
+
+📂 Project Structure
+ECE Study Assistant/
+│── app.py                      # Main app (UI + routing + memory)
+│── agents/
+│    ├── explainer.py           # Explainer Agent
+│    ├── quiz.py                # Quiz Agent
+│    ├── summarizer.py          # Summarizer Agent
+│── tools/
+│    ├── pdf_reader.py          # PDF extraction tool
+│    ├── memory.py              # Custom memory helpers (optional)
+│── data/
+│    ├── user_data.json         # Stores chat & pdf memory
+│── uploads/                    # For storing uploaded PDFs
+│── .env                        # GOOGLE_AI_API_KEY
+│── README.md
+│── requirements.txt
+
+
+🧠 How the Multi-Agent System Works
+
+Each agent is a separate Python class:
+
+ExplainerAgent → explains concepts
+
+QuizAgent → creates quizzes
+
+SummarizerAgent → summarizes text
+
+Chat Mode → interacts using PDF + memory + Google AI
+
+Routing is handled inside app.py:
+
+if mode == "Explainer Agent":
+    response = ExplainerAgent(client).explain(user_input)
+
+📄 PDF-Based Question Answering
+
+When a user uploads a PDF:
+
+✔ Extracts text
+✔ Saves to memory
+✔ Chat mode uses this for relevant answers
+
+Powered by:
+
+tools/pdf_reader.py
+
+📝 Future Improvements (Roadmap)
+
+🔹 Vector Embeddings (RAG) for smarter PDF search
+
+🔹 Multiple PDF library support
+
+🔹 User login / accounts
+
+🔹 Cloud deployment (Render / GCP)
+
+🔹 Voice input + TTS
+
+🔹 Notebook mode (step-by-step explanations)
+
+🤝 Contributing
+
+PRs and feature requests are welcome!
+If you want help improving the architecture or adding features, feel free to ask.
+
+⭐ License
+
+MIT License — free to use and modify.
